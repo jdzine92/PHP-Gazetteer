@@ -1,0 +1,257 @@
+/* PRELOADER CSS */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    overflow: hidden;
+    background: #fff;
+}
+
+#preloader:before {
+    content: "";
+    position: fixed;
+    top: calc(50% - 30px);
+    left: calc(50% - 30px);
+    border: 6px solid #f2f2f2;
+    border-top: 6px solid #56829e;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    -webkit-animation: animate-preloader 1s linear infinite;
+    animation: animate-preloader 1s linear infinite;
+}
+
+@-webkit-keyframes animate-preloader {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes animate-preloader {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+/* --------------------------------------------- */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    /*overflow: hidden;*/
+}
+
+#appName {
+    position: fixed;
+    display: block;
+    z-index: 99999;
+    color: #fff;
+    background-color: #222;
+    width: 100%;
+    height: 58px;
+    padding: 0.5rem;
+}
+
+nav {
+    position: fixed;
+    display: block;
+    z-index: 99999;
+    color: #fff;
+    background-color: #444;
+    width: 100%;
+    height: 58px;
+    margin-top: 58px;
+    padding: 0.5rem;
+}
+
+
+h2 {
+    display: inline-block;
+    padding-left: 2rem;
+    color: #ccc;
+}
+
+#inputControls {
+    float: left;
+    margin-left: 2rem;
+}
+
+#getCountryInfo {
+    background-color: #1d563e;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 0.5rem;
+    margin-left: 1rem;
+}
+
+#getCountryInfo:hover {
+    background-color: #217552;
+}
+
+
+#map {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: auto;
+    /* STOPS MAP MOVING */
+    border-top: 116px solid transparent;
+}
+
+
+ul {
+    list-style-type: square;
+    /* removes default indent */
+    margin: 0;
+    padding-left: 0.5rem;
+}
+
+
+#sidebar {
+    float: left;
+    width: 220px;
+    padding: 1rem; 
+    overflow-y: scroll;
+    height: 100%;
+    /* STOPS NAV MOVING */
+    border-top: 116px solid transparent;
+}
+
+#countryFlag {
+    width: 180px;
+    height: auto;
+    padding-bottom: 1rem;
+}
+
+
+/* scales svg flag img */
+#countryFlag svg {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+
+
+.expandMenu {
+    cursor: pointer;
+    color: #1d563e;
+}
+
+.sidebar-toggle {
+    background-color: #eee;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+#newsTitle {
+    color:#222;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+}
+
+#newsWindow {
+    position: absolute;
+    /* 116px to clear nav */
+    top: calc(65% + 116px);
+    /* 220px to clear sidebar */
+    left: 220px;
+    width: calc(100% - 220px);
+    height: calc(35% - 116px);
+    padding: 1rem;
+    z-index: 99999;
+    background-color: #aaa;
+    visibility: hidden;
+    overflow-y: auto;
+    opacity: 0.9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+#newsError {
+    color:#940a00;
+}
+
+#closeBtn {
+    float: right;
+    cursor: pointer;
+}
+
+/* FOR DESKTOP
+#newsWindow {
+    position: absolute;
+    top: 0rem;
+    width: calc(80% - 220px);
+    height: calc(80% - 58px);
+    margin-left:calc(220px + 10%);
+    min-height: 500px;
+    margin-top: calc(58px + 10%);
+    padding: 1rem;
+    z-index: 99999;
+    background-color: #aaa;
+    visibility: hidden;
+    overflow-y: auto;
+    opacity: 0.8;
+} 
+*/
+
+/* THIS OVERRIDES EASYBUTTON DEFAULT SIZE */
+.leaflet-touch .leaflet-bar button {
+    height: 36px !important;
+    width: 42px !important;
+}
+
+.mapclick {
+    float: right;
+}
+
+
+/* sets popup attributes */
+.leaflet-popup-content {
+    width: 230px;
+    height: 400px;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+#flag {
+    box-shadow: 5px 10px 18px #888888;
+}
+
+#wiki {
+    float: right;
+}
+
+
+#timezoneError,
+#elevationError,
+#weatherError {
+    color: #940a00;
+    height: 30px;
+}
+
+
+.timezoneData,
+.elevationData,
+.weatherData {
+    visibility: visible;
+    color: #000;
+}

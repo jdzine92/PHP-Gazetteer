@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- ENSURES NO HORIZONTAL SCROLL, NOT SCALABLE -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta charset="utf-8">
+	<title>Jordan's Gazetteer</title>
+	<meta name="description" content="">
+	<meta property="og:title" content="">
+	<meta property="og:type" content="">
+	<meta property="og:url" content="">
+	<meta property="og:image" content="">
+
+	<!-- RESOURCES -->
+	<!-- CUSTOM STYLES -->
+	<!--<link rel="stylesheet" href="./resources/css/normalise.min.css">-->
+	<link rel="stylesheet" href="./resources/css/style.css">
+	<link rel="icon" href="favicon.ico" type="image/ico" />
+	<!-- LEAFLET CSS / JS -->
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+		integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+		crossorigin="" />
+	<script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+		integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+		crossorigin=""></script>
+	<!-- EASY BUTTONS CSS / JS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
+	<script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+	<!-- BOOTSTRAP 5 -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+	<div id="appName"><h2>Jordan's Gazetteer</h2></div>
+	<nav>
+			<!-- Options are populated with countryBorders.geo.json -->
+			<div id="inputControls">
+			<select name="selectCountry" id="selectCountry"></select>
+			<button id="getCountryInfo" name="getCountryInfo" id="getCountryInfo" type="submit">Get
+				Info</button>
+		</div>
+	</nav>
+
+	<!-- Sidebar -->
+		<div id="sidebar">
+			<div id="countryFlag"></div>
+			
+			<h3 class="expandMenu">Country Data</h3>
+			<hr>
+			<div class="sidebar-toggle">
+				<h6>Country Name</h6>
+				<p id="countryName"></p>
+				<h6>Area (Km<sup>2</sup>)</h6>
+				<p id="area"></p>
+				<h6>Capital City</h6>
+				<p id="capitalCity"></p>
+				<h6>Country Code (ISO A2)</h6>
+				<p id="countryCodeA2"></p>
+				<h6>Country Code (ISO A3)</h6>
+				<p id="countryCodeA3"></p>
+				<h6>Country Code (ISO N3)</h6>
+				<p id="countryCodeN3"></p>
+			</div>
+
+			<h3 class="expandMenu">Currency Data</h3>
+			<hr>
+			<div class="sidebar-toggle">
+				<h6>Currency Code</h6>
+				<p id="currencyCode"></p>
+				<h6>Currency Name</h6>
+				<p id="currencyName"></p>
+				<h6>Currency Symbol</h6>
+				<p id="currencySymbol"></p>
+				<h6>Exchange Rates</h6>
+				<p id="exchangeRates"></p>
+			</div>
+		</div>
+
+	<div id="map"></div>
+	<div id="newsWindow">
+		<img id="closeBtn" src="./resources/img/close.png">
+		<h2 id="newsTitle"></h2>
+		<p id="newsError"></p>
+		<div id="newsResults"></div>
+	</div>
+
+	<!-- PRELOADER (preloader.js) -->
+	<div id="preloader"></div>
+
+	<!-- JS SCRIPTS-->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script type="application/javascript" src="./resources/js/preloader.js"></script>
+	<script type="application/javascript" src="./resources/js/animate.js"></script>
+	<script type="module" src="./resources/js/map.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+		crossorigin="anonymous"></script>
+
+</body>
+
+</html>
